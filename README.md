@@ -4,7 +4,7 @@ POC for cookieless affiliate tracking
 Due to ITP2 (Apple's intelligent tracking protection) third-party-cookies and
 many other historically used tracking mechanisms don`t work anymore.
 
-To overcome this there are several techniques available 
+To overcome this there are several techniques available, generating a Identifier available at both affiliate and merchants page
 
 - bounceless
   - redirect to the target url directly without bouncing through third party cookies
@@ -13,13 +13,15 @@ To overcome this there are several techniques available
   - clientside fingerprinting is > 90% reliable 
 - Servergenerated Cached Ids
   - having a api endpoint which enforces http caching to return the same server side generated id until the clients cache is forcefully cleared
-- server2server tracking
-  - having a postback url for conversion tracking
-
+  
+With any of those ID's, connecting the client in both ends, available we then can use e.g.
+server2server tracking and having a postback url for conversion tracking
+ 
 Not used here, could be investigated further:
 - eTags
 - AuthCache
 
+[@see](#links_and_resources) 
 Instructions for running
 -----
 You need to add to your hosts file since we emulate different domain to make sure we don`t have shared cookies etc:
@@ -79,7 +81,7 @@ Conclusions
 - The Server Side fingerprinting needs to be evaluated, if it is reliable in that context
 
 
-Links and resources:
+<a name="links_and_resources"></a>Links and resources:
 -----
 For an overview about the topic i collected the resources here:
 
