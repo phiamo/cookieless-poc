@@ -40,7 +40,7 @@ bin/console doctrine:database:create
 bin/console doctrine:schema:up --force
 ```
 
-Init browscap cache
+Init browscap cache (can take a bit, downloads 80mb file) if you dont do it here, the first request will do it and take longer than the timeouts usually
 ```
 bin/console app:init-browscap
 ```
