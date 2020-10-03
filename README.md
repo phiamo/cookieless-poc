@@ -28,11 +28,21 @@ You need to add to your hosts file since we emulate different domain to make sur
 127.0.0.1       merchant.local
 127.0.0.1       api.local
 ```
-
+Get the code and install deps
+```
+git clone git@github.com:phiamo/cookieless-poc.git
+cd cookieless-poc
+composer install
+```
 We need a database, and currently sqlite is configured, so you need to run:
 ```
 bin/console doctrine:database:create
 bin/console doctrine:schema:up --force
+```
+
+Init browscap cache
+```
+bin/console app:init-browscap
 ```
 
 And the code currently expects to be run on port 8000 without tls so e.g. run

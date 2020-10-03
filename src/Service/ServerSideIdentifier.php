@@ -16,6 +16,11 @@ class ServerSideIdentifier
         $this->browscap = new Browscap($cacheDir);
     }
 
+    public function init()
+    {
+        $this->browscap->updateCache();
+    }
+
     public function getIdentifier()
     {
         // use browscap to get unique capabilities
