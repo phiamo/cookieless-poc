@@ -1,7 +1,6 @@
 <?php
 namespace App\Controller;
 
-
 use App\Service\ClickTracker;
 use App\Service\ClientManager;
 use App\Service\ServerSideIdentifier;
@@ -24,9 +23,7 @@ class ApiController
     public function trackingId(
         Request $request,
         ClickTracker $clickTracker
-    )
-    {
-
+    ) {
         $clientSideFingerPrint = $request->query->get('clientSideFingerPrint');
         $clientUUID = $request->query->get('clientUUID');
 
@@ -51,8 +48,7 @@ class ApiController
     public function generateClientId(
         ClientManager $clientManager,
         Request $request
-    )
-    {
+    ) {
         $csFingerprint = $request->query->get('clientSideFingerPrint');
 
         $client = $clientManager->findOrCreate(

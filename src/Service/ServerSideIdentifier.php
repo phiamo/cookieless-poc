@@ -3,7 +3,6 @@
 
 namespace App\Service;
 
-
 use phpbrowscap\Browscap;
 
 class ServerSideIdentifier
@@ -11,7 +10,7 @@ class ServerSideIdentifier
     private Browscap $browscap;
     public function __construct(string $cacheDir)
     {
-        if(!file_exists($cacheDir)) {
+        if (!file_exists($cacheDir)) {
             @mkdir($cacheDir, 0777, true);
         }
         $this->browscap = new Browscap($cacheDir);

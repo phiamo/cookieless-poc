@@ -20,8 +20,7 @@ class AffiliateController extends AbstractController
     public function index(
         string $productId,
         string $affiliateId
-    )
-    {
+    ) {
         return [
             'affiliateId' => $affiliateId,
             'productId' => $productId,

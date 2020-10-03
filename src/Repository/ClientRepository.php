@@ -23,21 +23,21 @@ class ClientRepository extends ServiceEntityRepository
     {
         $qb = $this->createQueryBuilder('client');
 
-        if($csFingerprint) {
+        if ($csFingerprint) {
             $qb
                 ->orWhere('client.csFingerprint = :csFingerprint')
                 ->setParameter('csFingerprint', $csFingerprint)
             ;
         }
 
-        if($ssFingerprint) {
+        if ($ssFingerprint) {
             $qb
                 ->orWhere('client.ssFingerprint = :ssFingerprint')
                 ->setParameter('ssFingerprint', $ssFingerprint)
             ;
         }
 
-        if($guid) {
+        if ($guid) {
             $qb
                 ->orWhere('client.guid = :guid')
                 ->setParameter('guid', $guid)

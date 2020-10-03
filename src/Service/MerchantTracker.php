@@ -3,7 +3,6 @@
 
 namespace App\Service;
 
-
 use Symfony\Component\HttpFoundation\Request;
 
 class MerchantTracker
@@ -14,16 +13,14 @@ class MerchantTracker
     public function __construct(
         ClickTracker $clickTracker,
         ClientManager $clientManager
-    )
-    {
+    ) {
         $this->clickTracker = $clickTracker;
         $this->clientManager = $clientManager;
     }
 
     public function track(
         Request $request
-    )
-    {
+    ) {
         $clickId = $request->query->get('clickId');
 
         $csFingerPrint = $request->query->get('clientSideFingerPrint');
@@ -31,7 +28,7 @@ class MerchantTracker
 
         $client = $this->clientManager->findOrCreate($clientUUID, $csFingerPrint);
 
-        if($clickId) {
+        if ($clickId) {
             $this->clickTracker->track($clickId, $client);
         }
 

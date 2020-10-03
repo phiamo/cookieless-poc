@@ -3,7 +3,6 @@
 
 namespace App\Service;
 
-
 use App\Entity\Click;
 use App\Entity\Client;
 use App\Repository\ClickRepository;
@@ -19,8 +18,7 @@ class ClickTracker
         ClientManager $clientManager,
         EntityManagerInterface $entityManager,
         ClickRepository $clickRepository
-    )
-    {
+    ) {
         $this->entityManager = $entityManager;
         $this->clickRepository = $clickRepository;
         $this->clientManager = $clientManager;
@@ -32,13 +30,12 @@ class ClickTracker
     {
         $click = $this->clickRepository->findOneBy(['clickId' => $clickId]);
 
-        if(!$click) {
+        if (!$click) {
             $click = new Click($clickId, $client);
 
             $this->entityManager->persist($click);
             $this->entityManager->flush();
-        }
-        else {
+        } else {
             $click->incrementVisits();
             $this->entityManager->flush();
         }

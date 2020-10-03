@@ -22,8 +22,7 @@ class MerchantController extends AbstractController
     public function landingPage(
         MerchantTracker $merchantTracker,
         Request $request
-    )
-    {
+    ) {
         $client = $merchantTracker->track($request);
 
         return [
