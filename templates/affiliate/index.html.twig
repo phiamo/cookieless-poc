@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+{% block javascripts %}
+    <script src="//cdn.jsdelivr.net/npm/@fingerprintjs/fingerprintjs@2/dist/fingerprint2.min.js"></script>
+    <script src="/js/identify.js" async></script>
+    <script src="/js/affiliate-tracking.js" async></script>
+{% endblock %}
+
+{% block title %}Hello AffiliateController!{% endblock %}
+
+{% block body %}
+<style>
+    .wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+</style>
+
+<div class="wrapper">
+    <h1>Hello Customer! ✅</h1>
+
+    Buy our merchants stuff (server2server ID):
+    <a class="tracked-link" href="{{ path('app_merchant_landingpage') }}?affiliateId={{ affiliateId }}&productId={{ productId }}">Yes buy!</a>
+</div>
+{% endblock %}
