@@ -74,8 +74,9 @@ We use here a wild combination of all methods available as a POC.
 
 Conclusions
 -----
-- The Server generated Cached id is even available without forwarding it as a url parameter.
-- the client side fingerprinting also does not need to be forwarded, since it can be regenerated at the merchants page
+- The Server generated cached id's are even available without forwarding it as a url parameter.
+- The Client Side fingerprinting also does not need to be forwarded, since it can be regenerated at the merchants page
+- The Server Side fingerprinting needs to be evaluated, if it is reliable in that context
 
 
 Links and resources:
