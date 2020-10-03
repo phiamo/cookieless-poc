@@ -21,7 +21,9 @@ Not used here, could be investigated further:
 - eTags
 - AuthCache
 
-[@see](#links_and_resources) 
+@see [Links and resources](#links_and_resources)
+
+ 
 Instructions for running
 -----
 You need to add to your hosts file since we emulate different domain to make sure we don`t have shared cookies etc:
