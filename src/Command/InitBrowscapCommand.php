@@ -16,8 +16,7 @@ class InitBrowscapCommand extends Command
 
     public function __construct(
         ServerSideIdentifier $serverSideIdentifier
-    )
-    {
+    ) {
         parent::__construct(null);
 
         $this->serverSideIdentifier = $serverSideIdentifier;
